@@ -1,27 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import Card from './Card';
-import  logo  from "../assets/SNAP__News__logo.jpg";
-
+import logo from "../assets/SNAP__News__logo.jpg";
 
 function Newsapp() {
-  // ইউজারের সার্চ ইনপুট রাখার জন্য স্টেট
   const [search, setSearch] = useState('bangladesh');
-  // API থেকে আসা নিউজ ডেটা রাখার জন্য স্টেট
   const [newsData, setNewsData] = useState([]);
 
-  const API_KEY = '9d87ea8c219d4151bc2fb106578542bf';
+  const API_KEY = 'defa9cfcbe4cc0303c6050c71b3f6f27';
 
-  // ইনপুট ফিল্ডে টাইপ করলে সার্চ স্টেট আপডেট হবে
+  // Handle user typing in search input
   const handleInput = (e) => {
-    console.log(e.target.value);
     setSearch(e.target.value);
   };
 
-  // API থেকে ডেটা ফেচ করার জন্য ফাংশন
+  // Fetch news from GNews API
   const getData = async () => {
     try {
       const response = await fetch(
-        `https://newsapi.org/v2/everything?q=${search}&apiKey=${API_KEY}`
+        `https://gnews.io/api/v4/search?q=${search}&token=${API_KEY}&lang=en`
       );
       const jsonData = await response.json();
       console.log(jsonData.articles);
@@ -31,21 +27,24 @@ function Newsapp() {
     }
   };
 
-  // পেজ প্রথম লোড হওয়ার সময় একবার ডেটা লোড হবে
+  // Load default news on page load
   useEffect(() => {
     getData();
   }, []);
 
-  // ক্যাটাগরি বাটনে ক্লিক করলে সার্চ স্টেট আপডেট হবে
-  const userInput = (event) => {
+  // Handle category button clicks
+  const handleCategory = (event) => {
     setSearch(event.target.value);
   };
 
   return (
     <div>
+      {/* Navigation Bar */}
       <nav>
         <div>
-          <h1 ><img className='logo' src={logo} ></img>SNAP News</h1> {/* ওয়েবসাইট টাইটেল */}
+          <h1>
+            <img className='logo' src={logo} alt="Snap News Logo" /> SNAP News
+          </h1>
         </div>
         <ul>
           <a>All News</a>
@@ -56,27 +55,28 @@ function Newsapp() {
             type="text"
             placeholder="Search News"
             value={search}
-            onChange={handleInput} // ইনপুট পরিবর্তন হলে সার্চ স্টেট আপডেট হবে
+            onChange={handleInput}
           />
-          <button onClick={getData}>Search</button> {/* সার্চ বাটনে ক্লিক করলে API কল */}
+          <button onClick={getData}>Search</button>
         </div>
       </nav>
 
+      {/* Headline */}
       <div>
-        <p className="head">Stay Updated with SNAP News</p> {/* হেডলাইন */}
+        <p className="head">Stay Updated with SNAP News</p>
       </div>
 
+      {/* Category Buttons */}
       <div className="categoryBtn">
-        {/* ক্যাটাগরি বাটনগুলো */}
-        <button onClick={userInput} value="sports">Sports</button>
-        <button onClick={userInput} value="politics">Politics</button>
-        <button onClick={userInput} value="entertainment">Entertainment</button>
-        <button onClick={userInput} value="health">Health</button>
-        <button onClick={userInput} value="fitness">Fitness</button>
+        <button onClick={handleCategory} value="sports">Sports</button>
+        <button onClick={handleCategory} value="politics">Politics</button>
+        <button onClick={handleCategory} value="entertainment">Entertainment</button>
+        <button onClick={handleCategory} value="health">Health</button>
+        <button onClick={handleCategory} value="fitness">Fitness</button>
       </div>
 
+      {/* News Cards */}
       <div>
-        {/* নিউজ কার্ড দেখানোর জন্য Card কম্পোনেন্ট */}
         <Card data={newsData} />
       </div>
     </div>
