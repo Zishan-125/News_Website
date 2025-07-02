@@ -1,12 +1,51 @@
-# React + Vite
+SNAP News 📰 | Vite + React News Web App
+Live Demo: (https://snapnews2.netlify.app/)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+📌 Project Overview:
+SNAP News is a fast, responsive, and SEO-friendly news web application built with Vite + React. It fetches real-time news data using the GNews API and presents the latest headlines in an engaging and user-friendly layout.
 
-Currently, two official plugins are available:
+The project focuses on clean UI, mobile responsiveness, and dynamic news search and category filtering.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🚀 Key Features:
+✅ Vite + React fast build and performance
 
-## Expanding the ESLint configuration
+✅ Dynamic Search by keywords
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+✅ News Category Buttons (Sports, Politics, Entertainment, etc.)
+
+✅ Responsive Design (Mobile / Tablet / Desktop)
+
+✅ External News Links (Each card links to the original article)
+
+✅ Formspree-based Contact Form
+
+✅ Netlify Hosted Live Demo
+
+✅ React Icons integrated for better visuals
+
+📂 Tech Stack:
+Frontend Framework: React (with Vite)
+
+API: GNews API
+
+Styling: CSS Flexbox & Media Queries
+
+Deployment: Netlify
+
+
+📬 Contact Me:
+If you want to discuss or know more about this project, feel free to connect:
+
+LinkedIn: Abdullah Al Mamun Zishan
+
+Email: (You can add your email if you want)
+
+
+🌐 Live Deployment:
+The project is live here:
+🔗 https://snapnews2.netlify.app/
+
+✅ Author:
+Abdullah Al Mamun Zishan
+(Frontend Developer | React Learner | Campus Hero @Programming Hero | IR @Volunteers of Bangladesh)
+
