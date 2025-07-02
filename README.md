@@ -36,7 +36,7 @@ Deployment: Netlify
 📬 Contact Me:
 If you want to discuss or know more about this project, feel free to connect:
 
-LinkedIn: Abdullah Al Mamun Zishan
+LinkedIn: Abdullah Al Mamun Zishan (https://www.linkedin.com/in/abdullah-al-mamun-zishan-606550282/)
 
 Email: (You can add your email if you want)
 
